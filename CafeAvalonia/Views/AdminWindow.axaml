@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.AdminWindow"
+        x:DataType="vm:AdminViewModel"
+        Title="Список сотрудников" Width="800" Height="450">
+
+	<Grid Margin="10">
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,10,10" Spacing="5">
+			<Button Grid.Row="0" Content="Добавить сотрудника"
+					Command="{Binding AddEmployeeCommand}"
+					HorizontalAlignment="Left" Margin="0,0,10,10"/>
+			<Button Content="🔄 Обновить"
+			   Command="{Binding RefreshEmployeesCommand}" />
+		</StackPanel>
+
+		
+		<ListBox Grid.Row="1" ItemsSource="{Binding Employees}"
+                 SelectedItem="{Binding SelectedEmployee}"
+                 Margin="0,5">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid Margin="5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="120"/>
+							<ColumnDefinition Width="100"/>
+							<ColumnDefinition Width="120"/>
+							<ColumnDefinition Width="100"/>
+							<ColumnDefinition Width="150"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Grid.Column="0" Text="{Binding Surname}" FontWeight="Bold"/>
+						<TextBlock Grid.Column="1" Text="{Binding Name}"/>
+						<TextBlock Grid.Column="2" Text="{Binding Patronymic}"/>
+						<TextBlock Grid.Column="3" Text="{Binding Status}" Foreground="Red"/>
+						<TextBlock Grid.Column="4" Text="{Binding Speciality}"/>
+
+				
+						<Button Grid.Column="5" Content="Подробнее"
+                                Command="{Binding $parent[ListBox].DataContext.ShowDetailsCommand}"
+                                CommandParameter="{Binding}"
+                                Margin="10,0,0,0"/>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		
+		<StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,10" Spacing="10">
+			<Button Content="Смены" Command="{Binding NavigateToShiftsCommand}" Background="LightBlue"/>
+			<Button Content="Заказы" Command="{Binding NavigateToOrdersCommand}" Background="LightGreen"/>
+		</StackPanel>
+	</Grid>
+</Window>

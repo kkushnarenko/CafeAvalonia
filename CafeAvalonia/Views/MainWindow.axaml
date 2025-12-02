@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="CafeAvalonia" Width="800" Height="450">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Авторизация" FontSize="24" Margin="10"/>
+    
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Имя пользователя:"/>
+            <TextBox Width="200" Text="{Binding Login, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Пароль:"/>
+            <!-- Если PasswordBox не распознаётся, используйте временно TextBox с PasswordChar -->
+            <TextBox Width="200" PasswordChar="*" Text="{Binding Password, Mode=TwoWay}"/>
+            <!-- Попробуйте заменить на: <PasswordBox Width="200" Password="{Binding Password, Mode=TwoWay}"/> с нужным xmlns -->
+        </StackPanel>
+
+        <Button Content="Войти" Margin="10" Command="{Binding LoginCommand}"/>
+        
+    </StackPanel>
+    
+</Window>

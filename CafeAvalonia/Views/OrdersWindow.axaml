@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.OrdersWindow"
+        x:DataType="vm:OrdersViewModel"
+        Title="Все заказы"
+        Width="900" Height="600">
+    
+    <Grid Margin="10">
+      
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0"
+                 ItemsSource="{Binding Orders}"
+                 SelectedItem="{Binding SelectedOrder}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="15" Margin="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Spacing="5">
+                                <TextBlock Text="{Binding FkDishes.Name}" FontWeight="Bold" FontSize="16"/>
+                                <TextBlock Text="{Binding FkEmployee.Surname}"/>
+                                <TextBlock Text="{Binding TableNumber}"/>
+                                <TextBlock Text="{Binding ClientsCount, StringFormat='Гостей: {0}'}" />
+                                <TextBlock Text="{Binding Status}" Foreground="Blue"/>
+                                <TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontWeight="Bold"/>
+                            </StackPanel>
+
+                            <Button Grid.Column="1" Content="Подробнее"
+                                    Command="{Binding $parent[Window].DataContext.ShowOrderDetailsCommand}"
+                                    CommandParameter="{Binding}" Margin="10,0,0,0"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

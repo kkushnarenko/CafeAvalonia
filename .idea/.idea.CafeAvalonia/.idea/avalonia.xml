@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="CafeAvalonia/Views/AuthWindow.axaml" value="CafeAvalonia/CafeAvalonia.csproj" />
+        <entry key="CafeAvalonia/Views/MainWindow.axaml" value="CafeAvalonia/CafeAvalonia.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

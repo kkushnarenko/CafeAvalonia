@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="500" d:DesignHeight="700"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.AddEmployeeWindow"
+        x:DataType="vm:AddEmployeeViewModel"
+        Title="Добавить сотрудника"
+        Width="500" Height="700">
+
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="0" Text="Данные сотрудника" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+		<StackPanel Grid.Row="2" Spacing="15" Margin="0,10">
+			<TextBox Text="{Binding Surname}" Watermark="Фамилия" />
+			<TextBox Text="{Binding Name}" Watermark="Имя" />
+			<TextBox Text="{Binding Patronymic}" Watermark="Отчество" />
+			
+			<ComboBox ItemsSource="{Binding Roles}"
+			 SelectedItem="{Binding Role}"
+			 PlaceholderText="Роль сотрудника"/>
+			
+			<TextBox Text="{Binding Status}" Watermark="Статус" />
+
+			<!-- Фото -->
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<TextBox Text="{Binding Photo}" Watermark="Путь к фото" Width="350"/>
+				<Button Content="📷 Добавить фото" Command="{Binding AddPhotoCommand}"/>
+			</StackPanel>
+
+			<!-- Скан договора -->
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<TextBox Text="{Binding ScanContract}" Watermark="Путь к скану договора" Width="350"/>
+				<Button Content="📄 Добавить договор" Command="{Binding AddContractCommand}"/>
+			</StackPanel>
+
+			<!-- Данные пользователя -->
+			<TextBlock Text="Данные пользователя" FontSize="16" FontWeight="SemiBold" Margin="0,20,0,10"/>
+			<TextBox Text="{Binding Login}" Watermark="Логин" />
+			<TextBox Text="{Binding Email}" Watermark="Email" />
+			<TextBox Text="{Binding Password}" Watermark="Пароль" PasswordChar="*" />
+			
+		</StackPanel>
+
+		<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+			<Button Content="Отмена" Command="{Binding CancelCommand}"/>
+			<Button Content="Сохранить" Command="{Binding SaveCommand}" IsDefault="True"/>
+		</StackPanel>
+	</Grid>
+</Window>

@@ -1,0 +1,10 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.ShiftsWindow"
+        x:DataType="vm:ShiftsViewModel"
+        Title="ShiftsWindow">
+
+</Window>
