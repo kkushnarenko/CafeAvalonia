@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vm="using:CafeAvalonia.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CafeAvalonia.ShiftCreationDialogWindow"
+		x:DataType="vm:ShiftCreationDialogViewModel"
+		x:CompileBindings="False"
+        Title="ShiftCreationDialogWindow">
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<TextBlock Grid.Row="0" Text="Настройка смен (4-7 сотрудников)"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+
+		<StackPanel Grid.Row="1" Spacing="20">
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<TextBlock Text="Официантов:" VerticalAlignment="Center" Width="100"/>
+				<NumericUpDown Minimum="1" Maximum="5" Value="{Binding SelectedWaitersCount}"/>
+				<ListBox ItemsSource="{Binding Waiters}" MinWidth="200" MaxHeight="100"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<TextBlock Text="Поваров:" VerticalAlignment="Center" Width="100"/>
+				<NumericUpDown Minimum="1" Maximum="4" Value="{Binding SelectedCooksCount}"/>
+				<ListBox ItemsSource="{Binding Cooks}" MinWidth="200" MaxHeight="100"/>
+			</StackPanel>
+
+			<TextBlock Text="Всего сотрудников: {Binding SelectedWaitersCount + SelectedCooksCount}"
+                       Foreground="Blue" FontWeight="SemiBold"/>
+		</StackPanel>
+
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+			<Button Content="Отмена" Command="{Binding CancelCommand}"/>
+			<Button Content="Создать смены" Command="{Binding CreateShiftsCommand}"/>
+		</StackPanel>
+	</Grid>
+</Window>

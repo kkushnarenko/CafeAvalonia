@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CafeAvalonia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90941a70fd4e6c586754cacce6904291c40cf7d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CafeAvalonia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CafeAvalonia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CafeAvalonia.ShiftDetailsWindow"
+  Title="Детали смены" Width="800" Height="500"
+        x:CompileBindings="False">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок смены -->
+        <Border Grid.Row="0" Background="LightBlue" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="{Binding ShiftTime}" FontSize="24" FontWeight="Bold"/>
+                <TextBlock Text="{Binding EmployeeCount, StringFormat='Сотрудников: {0}'}"
+                           FontSize="16" Foreground="DarkBlue"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Список сотрудников -->
+        <ListBox Grid.Row="1" ItemsSource="{Binding CurrentShift.Shiftassignments}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="15" Spacing="15">
+                        <Ellipse Width="40" Height="40" Fill="Green" VerticalAlignment="Center"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding FkEmployee.Surname, FallbackValue='Неизвестно'}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding FkEmployee.Name, FallbackValue=''}" FontSize="13" Foreground="Gray"/>
+                            <TextBlock Text="{Binding FkEmployee.Speciality, FallbackValue=''}" FontSize="12"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Кнопка закрытия -->
+        <Button Grid.Row="2" Content="Закрыть"
+                Command="{Binding CloseCommand}"
+                HorizontalAlignment="Right" Margin="0,20,0,0"/>
+    </Grid>
+</Window>

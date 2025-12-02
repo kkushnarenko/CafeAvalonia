@@ -5,41 +5,51 @@
         x:DataType="vm:OrdersViewModel"
         Title="Все заказы"
         Width="900" Height="600">
-    
-    <Grid Margin="10">
-      
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <ListBox Grid.Row="0"
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10" Spacing="10">
+			<Button Content="Добавить заказ"
+					Command="{Binding AddOrderCommand}"
+					IsVisible="{Binding IsWaiter}"/>
+			<Button Content="Обновить"
+					Command="{Binding RefreshOrdersCommand}"
+					Width="120"/>
+		</StackPanel>
+
+		<ListBox Grid.Row="1"
                  ItemsSource="{Binding Orders}"
                  SelectedItem="{Binding SelectedOrder}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="15" Margin="2">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="15" Margin="2">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Column="0" Spacing="5">
-                                <TextBlock Text="{Binding FkDishes.Name}" FontWeight="Bold" FontSize="16"/>
-                                <TextBlock Text="{Binding FkEmployee.Surname}"/>
-                                <TextBlock Text="{Binding TableNumber}"/>
-                                <TextBlock Text="{Binding ClientsCount, StringFormat='Гостей: {0}'}" />
-                                <TextBlock Text="{Binding Status}" Foreground="Blue"/>
-                                <TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontWeight="Bold"/>
-                            </StackPanel>
+							<StackPanel Grid.Column="0" Spacing="5">
+								<TextBlock Text="{Binding FkDishes.Name}" FontWeight="Bold" FontSize="16"/>
+								<TextBlock Text="{Binding FkEmployee.Surname}"/>
+								<TextBlock Text="{Binding TableNumber}"/>
+								<TextBlock Text="{Binding ClientsCount, StringFormat='Гостей: {0}'}" />
+								<TextBlock Text="{Binding Status}" Foreground="Blue"/>
+								<TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontWeight="Bold"/>
+							</StackPanel>
 
-                            <Button Grid.Column="1" Content="Подробнее"
+							<Button Grid.Column="1" Content="Подробнее"
                                     Command="{Binding $parent[Window].DataContext.ShowOrderDetailsCommand}"
                                     CommandParameter="{Binding}" Margin="10,0,0,0"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </Grid>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
 </Window>

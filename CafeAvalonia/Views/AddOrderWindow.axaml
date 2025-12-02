@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.AddOrderWindow"
+        x:DataType="vm:AddOrderViewModel"
+        Width="400" Height="260"
+        Title="Новый заказ">
+
+	<Grid Margin="15"
+        RowDefinitions="Auto Auto Auto Auto Auto Auto"
+        ColumnDefinitions="Auto *">
+
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+				   Text="Новый заказ"
+				   FontSize="20" FontWeight="Bold"
+				   Margin="0,0,0,15"/>
+
+		<!-- Столик -->
+		<TextBlock Grid.Row="1" Grid.Column="0"
+				   Text="Стол:" Margin="0,0,10,5"
+				   VerticalAlignment="Center"/>
+		<ComboBox Grid.Row="1" Grid.Column="1"
+				  ItemsSource="{Binding Tables}"
+				  SelectedItem="{Binding SelectedTable}"
+				  Width="180"/>
+
+		<!-- Количество клиентов -->
+		<TextBlock Grid.Row="2" Grid.Column="0"
+				   Text="Клиентов:" Margin="0,0,10,5"
+				   VerticalAlignment="Center"/>
+		<TextBox Grid.Row="2" Grid.Column="1"
+				 Text="{Binding ClientsCount}"
+				 Width="80"/>
+
+		<!-- Блюдо -->
+		<TextBlock Grid.Row="3" Grid.Column="0"
+				   Text="Блюдо:" Margin="0,0,10,5"
+				   VerticalAlignment="Center"/>
+		<ComboBox Grid.Row="3" Grid.Column="1"
+				  ItemsSource="{Binding Dishes}"
+				  SelectedItem="{Binding SelectedDish}"
+				  Width="180"/>
+
+		<!-- Цена -->
+		<TextBlock Grid.Row="4" Grid.Column="0"
+				   Text="Цена:" Margin="0,0,10,5"
+				   VerticalAlignment="Center"/>
+		<TextBox Grid.Row="4" Grid.Column="1"
+				 Text="{Binding Price}"
+				 Width="100"/>
+
+		<!-- Кнопки -->
+		<StackPanel Grid.Row="5" Grid.ColumnSpan="2"
+					Orientation="Horizontal"
+					HorizontalAlignment="Right"
+					Margin="0,15,0,0"
+					Spacing="10">
+			<Button Content="Отмена"
+					Command="{Binding CancelCommand}" Width="90"/>
+			<Button Content="Сохранить"
+					Command="{Binding SaveCommand}" Width="100"/>
+		</StackPanel>
+	</Grid>
+</Window>

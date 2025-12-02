@@ -7,4 +7,75 @@
         x:DataType="vm:ShiftsViewModel"
         Title="ShiftsWindow">
 
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Заголовок -->
+		<TextBlock Grid.Row="0" Text="График смен" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+		<!-- Кнопки -->
+		<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,20" Spacing="10">
+			<Button Content="Обновить" Command="{Binding RefreshShiftsCommand}"/>
+			<Button Content="Создать смены на 5 дней"
+                    Command="{Binding CreateShift5DaysCommand}"
+                  />
+		</StackPanel>
+
+		<!-- Список смен -->
+		<ListBox Grid.Row="2" ItemsSource="{Binding Shifts}" SelectedItem="{Binding SelectedShift}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="8"
+                            Padding="20" Margin="5">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+
+							<!-- Время смены ИСПРАВЛЕНО -->
+							<StackPanel Grid.Column="0" Spacing="8">
+								<TextBlock FontWeight="Bold" FontSize="16"
+                                           Text="{Binding DateStart, StringFormat='{}{0:dd.MM HH:mm}'}"/>
+								<TextBlock Foreground="Gray" FontSize="12"
+                                           Text="{Binding DateFinis, StringFormat='{}{0:dd.MM HH:mm}'}"/>
+							</StackPanel>
+
+							<!-- Статус сотрудников -->
+							<StackPanel Grid.Column="1" Margin="20,0,0,0" Spacing="5">
+								<TextBlock FontWeight="SemiBold"
+                                           Text="{Binding Shiftassignments.Count, StringFormat='Сотрудников: {0}'}"/>
+								<ItemsControl ItemsSource="{Binding Shiftassignments}">
+									<ItemsControl.ItemTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding FkEmployee.Surname, FallbackValue='Неизвестно'}"
+                                                       FontSize="13" Margin="0,0,0,2"/>
+										</DataTemplate>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+							</StackPanel>
+
+							<!-- Кнопка назначения -->
+							<StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="10">
+								<Button Content="Добавить сотрудника"
+										Command="{Binding $parent[Window].DataContext.AssignEmployeeCommand}"
+										CommandParameter="{Binding}"
+										/>
+								<Button Content="Подробнее"
+										Command="{Binding $parent[Window].DataContext.ViewShiftDetailsCommand}"
+										CommandParameter="{Binding}"
+                            />
+							</StackPanel>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
 </Window>
+

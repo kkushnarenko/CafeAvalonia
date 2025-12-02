@@ -65,7 +65,7 @@ namespace CafeAvalonia.ViewModels
         private void NavigateToShifts()
         {
             // Открыть окно смен
-            var shiftsWindow = new ShiftsWindow();  // окно смен
+            var shiftsWindow = new ShiftsWindow(currentUser);  // окно смен
             shiftsWindow.Show();
            
         }

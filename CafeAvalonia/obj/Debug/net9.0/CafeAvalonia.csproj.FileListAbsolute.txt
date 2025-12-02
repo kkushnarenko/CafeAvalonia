@@ -174,3 +174,4 @@ C:\Users\Администратор\RiderProjects\CafeAvalonia\CafeAvalonia\bin\
 C:\Users\Администратор\RiderProjects\CafeAvalonia\CafeAvalonia\obj\Debug\net9.0\CafeAval.679CA8AE.Up2Date
 C:\Users\Администратор\RiderProjects\CafeAvalonia\CafeAvalonia\obj\Debug\net9.0\CafeAvalonia.genruntimeconfig.cache
 C:\Users\Администратор\RiderProjects\CafeAvalonia\CafeAvalonia\obj\Debug\net9.0\ref\CafeAvalonia.dll
+C:\Users\Администратор\RiderProjects\CafeAvalonia\CafeAvalonia\obj\Debug\net9.0\CafeAvalonia.sourcelink.json

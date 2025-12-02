@@ -35,6 +35,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/AddEmployeeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/AddOrderWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -48,6 +51,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/OrdersWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/ShiftCreationDialogWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/ShiftDetailsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Администратор/RiderProjects/CafeAvalonia/CafeAvalonia/Views/ShiftsWindow.axaml]

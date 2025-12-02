@@ -8,9 +8,11 @@ namespace CafeAvalonia.Views;
 
 public partial class ShiftsWindow : Window
 {
-    public ShiftsWindow()
+    public ShiftsWindow(User currentUser)
     {
         InitializeComponent();
+        DataContext = new ShiftsViewModel(currentUser, new BdcafeContext());
+
     }
     private void InitializeComponent()
     {
