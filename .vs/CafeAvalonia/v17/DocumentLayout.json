@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\views\\shiftswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\views\\shiftswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\viewmodels\\shiftdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\viewmodels\\shiftdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\viewmodels\\shiftsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\viewmodels\\shiftsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\views\\shiftcreationdialogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\views\\shiftcreationdialogwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\viewmodels\\shiftcreationdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\viewmodels\\shiftcreationdialogviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\views\\shiftdetailswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\views\\shiftdetailswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShiftsWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftsWindow.axaml",
-              "RelativeDocumentMoniker": "CafeAvalonia\\Views\\ShiftsWindow.axaml",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftsWindow.axaml",
-              "RelativeToolTip": "CafeAvalonia\\Views\\ShiftsWindow.axaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-02T11:17:48.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ShiftCreationDialogWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftCreationDialogWindow.axaml",
-              "RelativeDocumentMoniker": "CafeAvalonia\\Views\\ShiftCreationDialogWindow.axaml",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftCreationDialogWindow.axaml",
-              "RelativeToolTip": "CafeAvalonia\\Views\\ShiftCreationDialogWindow.axaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-02T11:06:34.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ShiftsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftsViewModel.cs",
-              "RelativeDocumentMoniker": "CafeAvalonia\\ViewModels\\ShiftsViewModel.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftsViewModel.cs",
-              "RelativeToolTip": "CafeAvalonia\\ViewModels\\ShiftsViewModel.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAADwvysAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T11:03:58.57Z",
+              "Title": "ShiftDetailsWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
+              "RelativeDocumentMoniker": "CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
+              "RelativeToolTip": "CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-02T19:02:54.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ShiftCreationDialogViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftCreationDialogViewModel.cs",
-              "RelativeDocumentMoniker": "CafeAvalonia\\ViewModels\\ShiftCreationDialogViewModel.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftCreationDialogViewModel.cs",
-              "RelativeToolTip": "CafeAvalonia\\ViewModels\\ShiftCreationDialogViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAWwAsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ShiftDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
+              "RelativeToolTip": "CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAuwIYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T11:02:10.93Z",
+              "WhenOpened": "2025-12-02T19:01:12.042Z",
               "EditorCaption": ""
             }
           ]

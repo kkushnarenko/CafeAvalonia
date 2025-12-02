@@ -85,7 +85,7 @@ namespace CafeAvalonia.ViewModels
         private async Task CreateShift5DaysAsync()
         {
             var dialog = new ShiftCreationDialogWindow();
-            dialog.DataContext = new ShiftCreationDialogViewModel(_dbContext);
+            dialog.DataContext = new ShiftCreationDialogViewModel();
             dialog.Show(); 
             await LoadShiftsAsync();
         }

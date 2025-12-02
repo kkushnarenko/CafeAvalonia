@@ -2,11 +2,8 @@
 using CafeAvalonia.Models;
 using ReactiveUI;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+using System.Reactive.Linq;
 using System.Reactive;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,93 +11,110 @@ namespace CafeAvalonia.ViewModels
 {
     public class ShiftCreationDialogViewModel : ReactiveObject
     {
-        public ObservableCollection<Employee> Waiters { get; } = new();
-        public ObservableCollection<Employee> Cooks { get; } = new();
-
-        public ReactiveCommand<Unit, Unit> CreateShiftsCommand { get; }
+        public ReactiveCommand<Unit, Unit> CreateShiftCommand { get; }
         public ReactiveCommand<Unit, Unit> CancelCommand { get; }
 
-        private int _selectedWaitersCount = 2;
-        private int _selectedCooksCount = 2;
-
-        public int SelectedWaitersCount
+        private DateTimeOffset? _shiftDate;
+        public DateTimeOffset? ShiftDate
         {
-            get => _selectedWaitersCount;
-            set => this.RaiseAndSetIfChanged(ref _selectedWaitersCount, value);
+            get => _shiftDate;
+            set => this.RaiseAndSetIfChanged(ref _shiftDate, value);
         }
 
-        public int SelectedCooksCount
+        private TimeSpan? _shiftStartTime = TimeSpan.FromHours(10);
+        public TimeSpan? ShiftStartTime
         {
-            get => _selectedCooksCount;
-            set => this.RaiseAndSetIfChanged(ref _selectedCooksCount, value);
+            get => _shiftStartTime;
+            set => this.RaiseAndSetIfChanged(ref _shiftStartTime, value);
         }
 
-        public ShiftCreationDialogViewModel(BdcafeContext dbContext)
+        private int _shiftDurationHours = 10;
+        public int ShiftDurationHours
         {
-            var context = dbContext ?? new BdcafeContext();
+            get => _shiftDurationHours;
+            set => this.RaiseAndSetIfChanged(ref _shiftDurationHours, value);
+        }
 
-            // Загружаем официантов и поваров
-            _ = Task.Run(async () =>
-            {
-                var waiters = await context.Employees
-                    .Where(e => e.Speciality == "официант")
-                    .ToListAsync();
-                var cooks = await context.Employees
-                    .Where(e => e.Speciality == "повар")
-                    .ToListAsync();
+   
+        private string _dateValidationMessage = "";
+        public string DateValidationMessage
+        {
+            get => _dateValidationMessage;
+            set => this.RaiseAndSetIfChanged(ref _dateValidationMessage, value);
+        }
 
-                await Dispatcher.UIThread.InvokeAsync(() =>
-                {
-                    foreach (var waiter in waiters) Waiters.Add(waiter);
-                    foreach (var cook in cooks) Cooks.Add(cook);
-                });
-            });
+        public ShiftCreationDialogViewModel()
+        {
+          
+            ShiftDate = DateTimeOffset.Now.Date.AddDays(1);
 
-            CreateShiftsCommand = ReactiveCommand.CreateFromTask(CreateShiftsAsync);
+      
+            this.WhenAnyValue(x => x.ShiftDate)
+                .Subscribe(_ => ValidateDate());
+
+            CreateShiftCommand = ReactiveCommand.CreateFromTask(CreateShiftAsync);
             CancelCommand = ReactiveCommand.CreateFromTask(async () => { });
         }
 
-        private async Task CreateShiftsAsync()
+     
+        private void ValidateDate()
         {
-            if (SelectedWaitersCount + SelectedCooksCount < 4 || SelectedWaitersCount + SelectedCooksCount > 7)
-                return; // Проверка требований
+            var today = DateTimeOffset.Now.Date;
+            var maxDate = today.AddDays(5);
 
-            var context = new BdcafeContext();
-            var startDate = DateTime.Now.Date.AddDays(1);
-            var waiters = Waiters.Take(SelectedWaitersCount).ToList();
-            var cooks = Cooks.Take(SelectedCooksCount).ToList();
-
-            for (int i = 0; i < 5; i++)
+            if (ShiftDate == null)
             {
+                DateValidationMessage = "";
+                return;
+            }
+
+            if (ShiftDate.Value.Date < today)
+            {
+                DateValidationMessage = "Дата не может быть раньше сегодняшнего дня";
+                return;
+            }
+
+            if (ShiftDate.Value.Date > maxDate)
+            {
+                DateValidationMessage = $" Дата смены только на 5 дней вперед! Максимум: {maxDate:dd.MM.yyyy}";
+                return;
+            }
+
+            // ✅ Корректная дата
+            DateValidationMessage = " Дата корректна";
+        }
+
+        private async Task CreateShiftAsync()
+        {
+            var today = DateTimeOffset.Now.Date;
+            var maxDate = today.AddDays(5);
+
+            if (ShiftDate == null || ShiftDate.Value.Date < today || ShiftDate.Value.Date > maxDate)
+            {
+                DateValidationMessage = " Выберите корректную дату!";
+                return;
+            }
+
+            try
+            {
+                using var context = new BdcafeContext();
+                DateTime startDateTime = ShiftDate.Value.DateTime + (ShiftStartTime ?? TimeSpan.Zero);
+                DateTime endDateTime = startDateTime.AddHours(ShiftDurationHours);
+
                 var shift = new Shift
                 {
-                    DateStart = startDate.AddDays(i),
-                    DateFinis = startDate.AddDays(i).AddHours(10)
+                    DateStart = startDateTime,
+                    DateFinis = endDateTime
                 };
 
                 context.Shifts.Add(shift);
                 await context.SaveChangesAsync();
 
-                // Назначаем официантов
-                foreach (var waiter in waiters)
-                {
-                    context.Shiftassignments.Add(new Shiftassignment
-                    {
-                        FkShiftsid = shift.Id,
-                        FkEmployeeid = waiter.Id
-                    });
-                }
-
-                // Назначаем поваров
-                foreach (var cook in cooks)
-                {
-                    context.Shiftassignments.Add(new Shiftassignment
-                    {
-                        FkShiftsid = shift.Id,
-                        FkEmployeeid = cook.Id
-                    });
-                }
-                await context.SaveChangesAsync();
+                DateValidationMessage = " Смена создана успешно!";
+            }
+            catch (Exception ex)
+            {
+                DateValidationMessage = $" Ошибка: {ex.Message}";
             }
         }
     }

@@ -20,7 +20,7 @@
 		<!-- Кнопки -->
 		<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,20" Spacing="10">
 			<Button Content="Обновить" Command="{Binding RefreshShiftsCommand}"/>
-			<Button Content="Создать смены на 5 дней"
+			<Button Content="Создать смену"
                     Command="{Binding CreateShift5DaysCommand}"
                   />
 		</StackPanel>
@@ -38,7 +38,7 @@
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
 
-							<!-- Время смены ИСПРАВЛЕНО -->
+						
 							<StackPanel Grid.Column="0" Spacing="8">
 								<TextBlock FontWeight="Bold" FontSize="16"
                                            Text="{Binding DateStart, StringFormat='{}{0:dd.MM HH:mm}'}"/>
@@ -62,10 +62,6 @@
 
 							<!-- Кнопка назначения -->
 							<StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="10">
-								<Button Content="Добавить сотрудника"
-										Command="{Binding $parent[Window].DataContext.AssignEmployeeCommand}"
-										CommandParameter="{Binding}"
-										/>
 								<Button Content="Подробнее"
 										Command="{Binding $parent[Window].DataContext.ViewShiftDetailsCommand}"
 										CommandParameter="{Binding}"

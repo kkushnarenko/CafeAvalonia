@@ -2,46 +2,85 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:vm="using:CafeAvalonia.ViewModels"
+        mc:Ignorable="d"
         x:Class="CafeAvalonia.ShiftDetailsWindow"
-  Title="Детали смены" Width="800" Height="500"
+        Title="Детали смены"
+        Width="900"
+        Height="600"
+        x:DataType="vm:ShiftDetailsViewModel"
         x:CompileBindings="False">
 
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<!-- Заголовок -->
+			<RowDefinition Height="*"/>
+			<!-- Список -->
+			<RowDefinition Height="Auto"/>
+			<!-- Кнопки -->
+		</Grid.RowDefinitions>
 
-        <!-- Заголовок смены -->
-        <Border Grid.Row="0" Background="LightBlue" CornerRadius="10" Padding="20" Margin="0,0,0,20">
-            <StackPanel>
-                <TextBlock Text="{Binding ShiftTime}" FontSize="24" FontWeight="Bold"/>
-                <TextBlock Text="{Binding EmployeeCount, StringFormat='Сотрудников: {0}'}"
+		<!-- 1. ЗАГОЛОВОК -->
+		<Border Grid.Row="0" Background="LightBlue" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+			<StackPanel>
+				<TextBlock Text="{Binding ShiftTime}" FontSize="24" FontWeight="Bold"/>
+				<TextBlock Text="{Binding EmployeeCount, StringFormat='Сотрудников: {0}'}"
                            FontSize="16" Foreground="DarkBlue"/>
-            </StackPanel>
-        </Border>
+			</StackPanel>
+		</Border>
 
-        <!-- Список сотрудников -->
-        <ListBox Grid.Row="1" ItemsSource="{Binding CurrentShift.Shiftassignments}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="15" Spacing="15">
-                        <Ellipse Width="40" Height="40" Fill="Green" VerticalAlignment="Center"/>
-                        <StackPanel>
-                            <TextBlock Text="{Binding FkEmployee.Surname, FallbackValue='Неизвестно'}" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding FkEmployee.Name, FallbackValue=''}" FontSize="13" Foreground="Gray"/>
-                            <TextBlock Text="{Binding FkEmployee.Speciality, FallbackValue=''}" FontSize="12"/>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+		<!-- 2. СПИСОК СОТРУДНИКОВ (Grid.Row="1") -->
+		<StackPanel Grid.Row="1" Spacing="20">
+			<TextBlock Text="Выберите сотрудников (4-7):"
+                       FontSize="16" FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10"/>
 
-        <!-- Кнопка закрытия -->
-        <Button Grid.Row="2" Content="Закрыть"
-                Command="{Binding CloseCommand}"
-                HorizontalAlignment="Right" Margin="0,20,0,0"/>
-    </Grid>
+			<ListBox ItemsSource="{Binding AllEmployees}"
+                     SelectedItems="{Binding SelectedEmployees}"
+                     SelectionMode="Multiple"
+                     Height="300"
+                     BorderBrush="Gray"
+                     BorderThickness="1">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal" Spacing="10" Margin="5">
+							<Ellipse Width="12" Height="12" Fill="LightGreen"/>
+							<TextBlock Text="{Binding Name}" FontWeight="Medium"/>
+							<TextBlock Text="{Binding Speciality}"
+                                       Foreground="DarkSlateGray"
+                                       FontSize="12"
+                                       VerticalAlignment="Center"/>
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+
+			<!-- ПРЕДУПРЕЖДЕНИЕ -->
+			<TextBlock Text="{Binding EmployeeCountMessage}"
+                       Foreground="Crimson"
+                       FontSize="14"
+                       FontWeight="SemiBold"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       Margin="0,15,0,0"/>
+		</StackPanel>
+
+		<!-- 3. КНОПКИ -->
+		<StackPanel Grid.Row="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="15"
+                    Margin="0,30,0,0">
+			<Button Content="Сохранить назначения"
+                    Command="{Binding SaveAssignmentsCommand}"
+                    IsDefault="True"
+                    MinWidth="160"
+                    Background="LightGreen"/>
+			<Button Content="Закрыть"
+                    Command="{Binding CancelCommand}"
+                    IsCancel="True"
+                    MinWidth="100"/>
+		</StackPanel>
+	</Grid>
 </Window>
