@@ -77,10 +77,7 @@
                     IsDefault="True"
                     MinWidth="160"
                     Background="LightGreen"/>
-			<Button Content="Закрыть"
-                    Command="{Binding CancelCommand}"
-                    IsCancel="True"
-                    MinWidth="100"/>
+		
 		</StackPanel>
 	</Grid>
 </Window>

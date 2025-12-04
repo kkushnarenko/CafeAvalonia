@@ -32,8 +32,6 @@
 				<TextBlock Text="Скан договора:" FontWeight="SemiBold"/>
 				<TextBlock Text="{Binding ScanContract}" TextWrapping="Wrap" FontFamily="Consolas"/>
 
-				<Button Content="Закрыть" Command="{Binding CloseCommand}"
-                        HorizontalAlignment="Right" Margin="0,20,0,0"/>
 			</StackPanel>
 		</StackPanel>
 	</ScrollViewer>

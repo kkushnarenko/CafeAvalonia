@@ -21,7 +21,6 @@
 
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
 			<Button Content="Сохранить" Command="{Binding SaveCommand}" />
-			<Button Content="Отмена" Command="{Binding CancelCommand}" />
 		</StackPanel>
 	</StackPanel>
 </Window>

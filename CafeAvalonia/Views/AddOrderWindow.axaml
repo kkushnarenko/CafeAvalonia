@@ -55,8 +55,6 @@
 					HorizontalAlignment="Right"
 					Margin="0,15,0,0"
 					Spacing="10">
-			<Button Content="Отмена"
-					Command="{Binding CancelCommand}" Width="90"/>
 			<Button Content="Сохранить"
 					Command="{Binding SaveCommand}" Width="100"/>
 		</StackPanel>

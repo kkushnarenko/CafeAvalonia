@@ -52,7 +52,6 @@
 		</StackPanel>
 
 		<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
-			<Button Content="Отмена" Command="{Binding CancelCommand}"/>
 			<Button Content="Сохранить" Command="{Binding SaveCommand}" IsDefault="True"/>
 		</StackPanel>
 	</Grid>
