@@ -66,8 +66,11 @@ public partial class BdcafeContext : DbContext
             entity.Property(e => e.ScanContract).HasColumnName("scan_contract");
             entity.Property(e => e.Speciality).HasColumnName("speciality");
             entity.Property(e => e.Status)
-                .HasMaxLength(50)
-                .HasColumnName("status");
+           .HasColumnName("status")
+           .HasConversion(
+               v => v.ToString(),
+               v => (EmployeeStatus)Enum.Parse(typeof(EmployeeStatus), v)
+           ).HasMaxLength(50); ;
             entity.Property(e => e.Surname)
                 .HasMaxLength(50)
                 .HasColumnName("surname");

@@ -20,7 +20,7 @@ public class AddEmployeeViewModel : ReactiveObject
     private string _surname = "";
     private string _name = "";
     private string _patronymic = "";
-    private string _status = "Работает";
+    private EmployeeStatus _status = EmployeeStatus.Работает;
     private string _photo = "";
     private string _scanContract = "";
     private string _login = "";
@@ -34,7 +34,7 @@ public class AddEmployeeViewModel : ReactiveObject
     public string Surname { get => _surname; set => this.RaiseAndSetIfChanged(ref _surname, value); }
     public string Name { get => _name; set => this.RaiseAndSetIfChanged(ref _name, value); }
     public string Patronymic { get => _patronymic; set => this.RaiseAndSetIfChanged(ref _patronymic, value); }
-    public string Status { get => _status; set => this.RaiseAndSetIfChanged(ref _status, value); }
+    public EmployeeStatus Status { get => _status; set => this.RaiseAndSetIfChanged(ref _status, value); }
     
     public string Photo { get => _photo; set => this.RaiseAndSetIfChanged(ref _photo, value); }
     public string ScanContract { get => _scanContract; set => this.RaiseAndSetIfChanged(ref _scanContract, value); }
@@ -137,12 +137,7 @@ public class AddEmployeeViewModel : ReactiveObject
                 speciality = EmployeeSpeciality.официант; // значение по умолчанию
             }
 
-            EmployeeStatus employeeStatus;
-            if (!Enum.TryParse<EmployeeStatus>(_status, true, out employeeStatus))
-            {
-                Console.WriteLine($"Неверный статус: {_status}");
-                employeeStatus = EmployeeStatus.Работает; // По умолчанию
-            }
+            
 
 
             // Создать сотрудника

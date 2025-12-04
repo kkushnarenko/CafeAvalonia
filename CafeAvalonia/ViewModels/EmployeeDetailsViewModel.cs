@@ -2,10 +2,12 @@
 using Avalonia.Media.Imaging; 
 using Avalonia.Platform;
 using CafeAvalonia.Models;
+using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using System;
-using System.Reactive;
 using System.IO;
+using System.Reactive;
+using System.Threading.Tasks;
 
 namespace CafeAvalonia.ViewModels
 {
@@ -26,7 +28,11 @@ namespace CafeAvalonia.ViewModels
         public EmployeeStatus Status
         {
             get => _status;
-            set => this.RaiseAndSetIfChanged(ref _status, value);
+            set
+            {
+                this.RaiseAndSetIfChanged(ref _status, value);
+                _ = SaveStatusAsync(value);
+            }
         }
         private EmployeeStatus _status = EmployeeStatus.Работает;
         public string StatusDisplay => Employee.Status.ToString();  
@@ -49,8 +55,35 @@ namespace CafeAvalonia.ViewModels
         {
             Employee = employee;
             _window = window;
+
+
             CloseCommand = ReactiveCommand.Create(() => _window.Close());
             LoadPhotoAsync();
+        }
+        private async Task SaveStatusAsync(EmployeeStatus newStatus)
+        {
+            try
+            {
+                // 1) обновляем сущность в памяти
+                Employee.Status = newStatus;
+
+                // 2) сохраняем в БД
+                await using var db = new BdcafeContext();
+
+                // Подгружаем нужного сотрудника и обновляем статус
+                var emp = await db.Employees.FirstOrDefaultAsync(e => e.Id == Employee.Id);
+                if (emp is null)
+                    return;
+
+                emp.Status = newStatus;
+                await db.SaveChangesAsync();
+
+                Console.WriteLine($"Статус сотрудника {emp.Id} сохранен: {newStatus}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка сохранения статуса: {ex.Message}");
+            }
         }
 
         private async void LoadPhotoAsync()

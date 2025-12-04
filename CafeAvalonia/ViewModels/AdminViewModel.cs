@@ -164,19 +164,7 @@ namespace CafeAvalonia.ViewModels
             {
                 Console.WriteLine($"Ошибка: {ex.Message}");
                 // Тестовые данные
-                Dispatcher.UIThread.Post(() =>
-                {
-                    Employees.Clear();
-                    Employees.Add(new Employee
-                    {
-                        Id = 1,
-                        Surname = "Иванов",
-                        Name = "Иван",
-                        Patronymic = "Иванович",
-                        Speciality = "официант",
-                        Status = "Работает"
-                    });
-                });
+               
             }
         }
 

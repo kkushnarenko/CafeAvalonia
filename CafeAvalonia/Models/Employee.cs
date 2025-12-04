@@ -14,7 +14,7 @@ public partial class Employee
 
     public string Patronymic { get; set; } = null!;
 
-    public string Status { get; set; } = "Работает";
+    public EmployeeStatus Status { get; set; } = EmployeeStatus.Работает;
 
     public string Photo { get; set; } = null!;
 
