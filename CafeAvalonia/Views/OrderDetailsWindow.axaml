@@ -112,5 +112,15 @@
                 Margin="0,20,0,0"
                 Width="160"
                 Height="32"/>
+
+		<Button Grid.Row="8" Grid.Column="0"
+        Content="Редактировать"
+        Width="120"
+        Height="32"
+        HorizontalAlignment="Left"
+        Margin="0,20,0,0"
+        Command="{Binding EditOrderCommand}"
+        IsVisible="{Binding CanEditOrder}"/>
+
 	</Grid>
 </Window>

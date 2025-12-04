@@ -36,14 +36,12 @@ namespace CafeAvalonia.ViewModels
 
         public OrdersViewModel(User currentUser)
         {
-            _currentUser = currentUser;
+            _currentUser = currentUser ?? throw new ArgumentNullException(nameof(currentUser));
 
-            // определяем роль
-            if (!Enum.TryParse<EmployeeSpeciality>(_currentUser.FkEmployee?.Speciality ?? "",
-                    true, out var speciality))
-                speciality = EmployeeSpeciality.официант;
+            // определяем роль - ТЕПЕРЬ _currentUser не null
+            var specialityStr = _currentUser.FkEmployee?.Speciality ?? "официант";
+            IsWaiter = specialityStr == "официант";
 
-            IsWaiter = speciality == EmployeeSpeciality.официант;
 
             ShowOrderDetailsCommand = ReactiveCommand.Create<Order>(ShowOrderDetails);
             AddOrderCommand = ReactiveCommand.CreateFromTask(AddOrderAsync,

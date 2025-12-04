@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CafeAvalonia.Models;
 
@@ -15,6 +16,8 @@ public partial class Order
 
     public int TableNumber { get; set; }
 
+    [Column("createdat")]
+    public DateTime CreatedAt { get; set; }
 
     public decimal Price { get; set; }
 

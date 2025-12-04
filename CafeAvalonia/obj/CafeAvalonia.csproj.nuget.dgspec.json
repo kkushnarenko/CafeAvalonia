@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[11.3.6, )"
             },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.3.6, )"
+            },
             "Avalonia.Desktop": {
               "target": "Package",
               "version": "[11.3.6, )"
@@ -69,6 +73,10 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.3.6, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -93,6 +101,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "PdfSharpCore": {
+              "target": "Package",
+              "version": "[1.3.67, )"
             }
           },
           "imports": [

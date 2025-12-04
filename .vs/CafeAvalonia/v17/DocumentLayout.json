@@ -3,12 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\viewmodels\\shiftdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\viewmodels\\shiftdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\services\\reportexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\services\\reportexporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\views\\shiftdetailswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\views\\shiftdetailswindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\AppData\\Local\\Temp\\.vsdbgsrc\\05eef5923ee95e7b4d07a99c071f55421e7bebe4f5a950d08787244b5f736d3d\\RxApp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\services\\pdfconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\services\\pdfconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\cafeavalonia.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\cafeavalonia.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\views\\shiftreportwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\views\\shiftreportwindow.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\riderprojects\\cafeavalonia\\cafeavalonia\\viewmodels\\shiftreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B89B1E-B17D-4E7B-8CD2-A658A6813985}|CafeAvalonia\\CafeAvalonia.csproj|solutionrelative:cafeavalonia\\viewmodels\\shiftreportviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +33,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ShiftDetailsWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
-              "RelativeDocumentMoniker": "CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
-              "RelativeToolTip": "CafeAvalonia\\Views\\ShiftDetailsWindow.axaml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-02T19:02:54.82Z",
+              "Title": "RxApp.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\AppData\\Local\\Temp\\.vsdbgsrc\\05eef5923ee95e7b4d07a99c071f55421e7bebe4f5a950d08787244b5f736d3d\\RxApp.cs",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\05eef5923ee95e7b4d07a99c071f55421e7bebe4f5a950d08787244b5f736d3d\\RxApp.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\AppData\\Local\\Temp\\.vsdbgsrc\\05eef5923ee95e7b4d07a99c071f55421e7bebe4f5a950d08787244b5f736d3d\\RxApp.cs [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\05eef5923ee95e7b4d07a99c071f55421e7bebe4f5a950d08787244b5f736d3d\\RxApp.cs [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAwJEAAAADAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T05:26:22.7Z",
+              "EditorCaption": " [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CafeAvalonia",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\CafeAvalonia.csproj",
+              "RelativeDocumentMoniker": "CafeAvalonia\\CafeAvalonia.csproj",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\CafeAvalonia.csproj",
+              "RelativeToolTip": "CafeAvalonia\\CafeAvalonia.csproj",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-04T05:19:53.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PdfConfig.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Services\\PdfConfig.cs",
+              "RelativeDocumentMoniker": "CafeAvalonia\\Services\\PdfConfig.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Services\\PdfConfig.cs",
+              "RelativeToolTip": "CafeAvalonia\\Services\\PdfConfig.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T05:13:02.297Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ShiftDetailsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
-              "RelativeDocumentMoniker": "CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
-              "RelativeToolTip": "CafeAvalonia\\ViewModels\\ShiftDetailsViewModel.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAuwIYAAAABAAAAAAAAAA==",
+              "Title": "ReportExporter.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Services\\ReportExporter.cs",
+              "RelativeDocumentMoniker": "CafeAvalonia\\Services\\ReportExporter.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Services\\ReportExporter.cs",
+              "RelativeToolTip": "CafeAvalonia\\Services\\ReportExporter.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAuwGMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T19:01:12.042Z",
+              "WhenOpened": "2025-12-04T04:38:42.974Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShiftReportWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftReportWindow.axaml",
+              "RelativeDocumentMoniker": "CafeAvalonia\\Views\\ShiftReportWindow.axaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\Views\\ShiftReportWindow.axaml",
+              "RelativeToolTip": "CafeAvalonia\\Views\\ShiftReportWindow.axaml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAQwDMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-03T18:16:54.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShiftReportViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftReportViewModel.cs",
+              "RelativeDocumentMoniker": "CafeAvalonia\\ViewModels\\ShiftReportViewModel.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440\\RiderProjects\\CafeAvalonia\\CafeAvalonia\\ViewModels\\ShiftReportViewModel.cs",
+              "RelativeToolTip": "CafeAvalonia\\ViewModels\\ShiftReportViewModel.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAmwK8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T18:11:17.484Z"
             }
           ]
         }

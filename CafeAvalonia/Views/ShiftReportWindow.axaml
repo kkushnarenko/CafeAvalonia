@@ -1,0 +1,141 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.ShiftReportWindow"
+        x:DataType="vm:ShiftReportViewModel"
+        Title="Отчет по смене"
+        Width="1000"
+        Height="600">
+
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<!-- Заголовок -->
+			<RowDefinition Height="Auto"/>
+			<!-- Инфо по смене -->
+			<RowDefinition Height="*"/>
+			<!-- Все заказы -->
+			<RowDefinition Height="*"/>
+			<!-- Оплаченные заказы -->
+			<RowDefinition Height="Auto"/>
+			<!-- Кнопка закрытия -->
+		</Grid.RowDefinitions>
+
+		<!-- Заголовок -->
+		<Border Grid.Row="0" Background="LightBlue" Padding="15" Margin="0,0,0,10">
+			<StackPanel Orientation="Horizontal" Spacing="15">
+				<TextBlock Text="📊 Отчет по активной смене"
+                           FontSize="22"
+                           FontWeight="Bold" />
+				<Button Command="{Binding LoadCurrentShiftReportCommand}"
+                        Content="🔄 Загрузить" />
+				<Button Command="{Binding RefreshReportCommand}"
+                        Content="Обновить" />
+				<Button Content="Экспорт PDF"  Command="{Binding ExportPdfCommand}" />
+				<Button Content="Экспорт XLSX" Command="{Binding ExportXlsxCommand}" />
+
+			</StackPanel>
+		</Border>
+
+		<!-- Информация по смене и суммам -->
+		<Border Grid.Row="1" Background="LightGreen" Padding="15" Margin="0,0,0,10">
+			<StackPanel Orientation="Horizontal" Spacing="20">
+				<TextBlock Text="{Binding CurrentShift.DateStart,
+                                          StringFormat='Начало: {0:dd.MM HH:mm}',
+                                          FallbackValue='Нет смены'}" />
+				<TextBlock Text="{Binding CurrentShift.DateFinis,
+                                          StringFormat='Конец: {0:dd.MM HH:mm}',
+                                          FallbackValue='Нет смены'}" />
+				<Separator/>
+				<!-- Все заказы -->
+				<TextBlock Text="{Binding OrdersInShift.Count,
+                                          StringFormat='Всего заказов: {0}'}" />
+				<TextBlock Text="{Binding TotalRevenueAll,
+                                          StringFormat='Сумма всех: {0:C}'}" />
+				<Separator/>
+				<!-- Оплаченные -->
+				<TextBlock Text="{Binding PaidOrdersInShift.Count,
+                                          StringFormat='Оплачено заказов: {0}'}" />
+				<TextBlock Text="{Binding TotalRevenuePaid,
+                                          StringFormat='Выручка: {0:C}'}" />
+			</StackPanel>
+		</Border>
+
+		<Grid Grid.Row="2" Margin="0,0,0,10">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0"
+                       Text="Все заказы активной смены"
+                       FontWeight="Bold"
+                       Margin="0,0,0,5" />
+
+			<ListBox Grid.Row="1"
+                     ItemsSource="{Binding OrdersInShift}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="Gray" BorderThickness="1"
+                                CornerRadius="5" Padding="10" Margin="2">
+							<StackPanel Spacing="3">
+								<TextBlock Text="{Binding FkDishes.Name}"
+                                           FontWeight="Bold" FontSize="14"/>
+								<TextBlock Text="{Binding FkEmployee.Surname}"/>
+								<TextBlock Text="{Binding TableNumber,
+                                                          StringFormat='Стол: {0}'}"/>
+								<TextBlock Text="{Binding ClientsCount,
+                                                          StringFormat='Гостей: {0}'}"/>
+								<TextBlock Text="{Binding Status}" Foreground="Blue"/>
+								<TextBlock Text="{Binding Price,
+                                                          StringFormat='Цена: {0:C}'}"
+                                           FontWeight="Bold"/>
+								<TextBlock Text="{Binding CreatedAt,
+                                                          StringFormat='Создан: {0:dd.MM HH:mm}'}"/>
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+
+		<!-- Оплаченные заказы (выручка) -->
+		<Grid Grid.Row="3">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0"
+                       Text="Оплаченные заказы (выручка)"
+                       FontWeight="Bold"
+                       Margin="0,0,0,5" />
+
+			<ListBox Grid.Row="1"
+                     ItemsSource="{Binding PaidOrdersInShift}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border BorderBrush="Gray" BorderThickness="1"
+                                CornerRadius="5" Padding="10" Margin="2">
+							<StackPanel Spacing="3">
+								<TextBlock Text="{Binding FkDishes.Name}"
+                                           FontWeight="Bold" FontSize="14"/>
+								<TextBlock Text="{Binding FkEmployee.Surname}"/>
+								<TextBlock Text="{Binding TableNumber,
+                                                          StringFormat='Стол: {0}'}"/>
+								<TextBlock Text="{Binding ClientsCount,
+                                                          StringFormat='Гостей: {0}'}"/>
+								<TextBlock Text="{Binding Status}" Foreground="Blue"/>
+								<TextBlock Text="{Binding Price,
+                                                          StringFormat='Цена: {0:C}'}"
+                                           FontWeight="Bold"/>
+								<TextBlock Text="{Binding CreatedAt,
+                                                          StringFormat='Создан: {0:dd.MM HH:mm}'}"/>
+							</StackPanel>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Grid>
+	</Grid>
+</Window>

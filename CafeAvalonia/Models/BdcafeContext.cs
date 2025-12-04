@@ -98,6 +98,10 @@ public partial class BdcafeContext : DbContext
             entity.HasOne(d => d.FkEmployee).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.FkEmployeeid)
                 .HasConstraintName("Order_fk_employeeid_fkey");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnName("createdat")  
+                .HasColumnType("timestamp without time zone")
+                .HasDefaultValueSql("now()");
         });
 
         modelBuilder.Entity<Shift>(entity =>

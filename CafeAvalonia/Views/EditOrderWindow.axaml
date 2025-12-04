@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:CafeAvalonia.ViewModels"
+        x:Class="CafeAvalonia.Views.EditOrderWindow"
+        x:DataType="vm:EditOrderViewModel"
+        Title="Редактирование заказа" Width="400" Height="300">
+
+	<StackPanel Margin="20" Spacing="10">
+		<TextBlock Text="Редактирование заказа" FontWeight="Bold" FontSize="20" />
+
+		<TextBlock Text="Количество гостей:" />
+		<NumericUpDown Value="{Binding Order.ClientsCount}" Minimum="1" />
+
+		<TextBlock Text="Номер стола:" />
+		<TextBox Text="{Binding Order.TableNumber}" />
+
+		<TextBlock Text="Статус:" />
+		
+		<ComboBox ItemsSource="{Binding AvailableStatuses}"
+                  SelectedItem="{Binding SelectedStatus}" />
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+			<Button Content="Сохранить" Command="{Binding SaveCommand}" />
+			<Button Content="Отмена" Command="{Binding CancelCommand}" />
+		</StackPanel>
+	</StackPanel>
+</Window>

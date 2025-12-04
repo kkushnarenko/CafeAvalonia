@@ -10,7 +10,6 @@ create table employee
 	Speciality text not null check (Speciality = 'повар' or Speciality = 'официант' OR Speciality = 'администратор')
 ); 
  
-
 create table users
 (
 	ID serial primary key,
@@ -60,20 +59,9 @@ create table "Order"(
 	Clients_count int not null,
 	Table_number int not null,
 	Price money not null,
-	Status Varchar(50) not null
+	Status Varchar(50) not null,
+	CreatedAt timestamp without time zone DEFAULT now() NOT NULL
 );
-
-INSERT INTO "Order" (FK_employeeID, FK_dishesID, Clients_count, Table_number, Price, Status) VALUES
-(1, 1, 2, 5, 900.00, 'готов'),
-(2, 3, 4, 3, 1200.00, 'готовиться'),
-(3, 2, 3, 1, 1500.00, 'готов'),
-(1, 5, 1, 6, 350.00, 'готовиться'),
-(2, 7, 2, 4, 1400.00, 'готов'),
-(3, 6, 5, 7, 4000.00, 'готовиться'),
-(1, 4, 3, 2, 1650.00, 'готов'),
-(2, 8, 4, 8, 1600.00, 'готовиться'),
-(3, 9, 2, 9, 500.00, 'готов'),
-(1, 10, 1, 9, 200.00, 'готовиться');
 
 
 create table Shifts(
@@ -87,6 +75,4 @@ create table ShiftAssignment(
 	FK_ShiftsID int references Shifts(ID),
 	FK_EmployeeID int references employee(ID)
 );
-
-
 

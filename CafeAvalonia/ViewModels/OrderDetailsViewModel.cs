@@ -5,7 +5,9 @@ using ReactiveUI;
 using System;
 using System.Collections.Generic;
 using System.Reactive;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
+using CafeAvalonia.Views;
 
 namespace CafeAvalonia.ViewModels;
 
@@ -15,6 +17,19 @@ public partial class OrderDetailsViewModel : ReactiveObject
     private readonly User _currentUser;
     private Order _order;
     private Window? _window;
+
+    private bool _isAdmin;
+    public bool IsAdmin
+    {
+        get => _isAdmin;
+        set => this.RaiseAndSetIfChanged(ref _isAdmin, value);
+    }
+    private bool _canEditOrder;
+    public bool CanEditOrder
+    {
+        get => _canEditOrder;
+        set => this.RaiseAndSetIfChanged(ref _canEditOrder, value);
+    }
 
     public Order Order
     {
@@ -39,30 +54,47 @@ public partial class OrderDetailsViewModel : ReactiveObject
         _currentUser = currentUser;
         _window = window;
 
-        // Попытка распарсить статус заказа из строки в enum
+       
         if (!Enum.TryParse<OrderStatus>(order.Status ?? "", true, out var parsedStatus))
-        {
             parsedStatus = OrderStatus.принят;
-        }
         SelectedStatus = parsedStatus;
 
-        // Определяем роль пользователя через enum
-        if (!Enum.TryParse<EmployeeSpeciality>(_currentUser.FkEmployee?.Speciality ?? "", true, out var speciality))
-        {
-            speciality = EmployeeSpeciality.официант;
-        }
+    
+        var specialityStr = _currentUser.FkEmployee?.Speciality ?? "официант";
+        IsAdmin = specialityStr.Contains("администратор", StringComparison.OrdinalIgnoreCase);
 
-        // Статусы согласно роли
-        AvailableStatuses = speciality switch
-        {
-            EmployeeSpeciality.официант => new List<OrderStatus> { OrderStatus.принят, OrderStatus.оплачен },
-            EmployeeSpeciality.повар => new List<OrderStatus> { OrderStatus.готовится, OrderStatus.готов },
-            _ => new List<OrderStatus>()
-        };
+        CanEditOrder = IsAdmin && order.Status != "оплачен";
 
+        AvailableStatuses = IsAdmin && order.Status != "оплачен"
+            ? new List<OrderStatus> { OrderStatus.принят, OrderStatus.готовится, OrderStatus.готов, OrderStatus.оплачен }
+            : specialityStr switch
+            {
+                var s when s.Contains("официант") => new List<OrderStatus> { OrderStatus.принят, OrderStatus.оплачен },
+                var s when s.Contains("повар") => new List<OrderStatus> { OrderStatus.готовится, OrderStatus.готов },
+                _ => new List<OrderStatus>()
+            };
+
+      
         UpdateStatusCommand = ReactiveCommand.CreateFromTask(UpdateStatusAsync,
-            this.WhenAnyValue(vm => vm.SelectedStatus, status => AvailableStatuses.Contains(status)));
+            this.WhenAnyValue(vm => vm.SelectedStatus)
+                .Select(status => AvailableStatuses.Contains(status)));
+
+        EditOrderCommand = ReactiveCommand.Create(OnEditOrder,
+            this.WhenAnyValue(x => x.IsAdmin));
     }
+
+ 
+    public ReactiveCommand<Unit, Unit> EditOrderCommand { get; }
+
+    private void OnEditOrder()
+    {
+        var editWindow = new EditOrderWindow();
+        var editVm = new EditOrderViewModel(_order, editWindow);
+        editWindow.DataContext = editVm;
+        editWindow.Show();
+    }
+
+
 
     private async Task UpdateStatusAsync()
     {
